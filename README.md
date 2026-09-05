@@ -28,6 +28,8 @@ Three channels are examined: **price competition**, **raw material prices**, and
 
 Volumes still rise, but growth decelerates sharply while average revenue per vehicle and gross margin fall together — the signature of price-led competition rather than demand weakness.
 
+![Vehicle sales, revenue growth and margin, 2023–2025](figures/fig-price-competition.png)
+
 ### 2. Lithium transmits to cost of sales through a three-stage chain
 
 Rather than assuming a 1:1 pass-through from lithium price to cost, the analysis uses a staged mechanism with sourced coefficients:
@@ -42,7 +44,11 @@ Rather than assuming a 1:1 pass-through from lithium price to cost, the analysis
 | Battery pack → vehicle value | 35% | IEA benchmark |
 | Vehicle cost → BYD cost of sales | 55.85% | BYD 2025 annual report |
 
-A ±10% lithium price shock is then run through to cost of sales and gross margin (`analysis/lithium-cost-sensitivity.csv`).
+A ±10% lithium price shock is then run through to cost of sales and gross margin ([`analysis/lithium-cost-sensitivity.csv`](analysis/lithium-cost-sensitivity.csv)).
+
+![Quarterly lithium carbonate price vs BYD gross margin](figures/fig-lithium-vs-gross-margin.png)
+
+![Lithium cost sensitivity, ±10%](figures/fig-lithium-sensitivity.png)
 
 ### 3. FX exposure is rising structurally
 
@@ -50,21 +56,50 @@ Overseas revenue share moved from 21.6% (2022) to 38.7% (2025), while domestic r
 
 USD/CNY and EUR/CNY are shown to track the 10-year sovereign yield differential against China over 2020–2025, which is used as the reference for exchange-rate expectations.
 
-### 4. Two sensitivity grids quantify the downside
+![USD/CNY vs US–China 10-year yield differential](figures/fig-usdcny-vs-yield-differential.png)
 
-| Grid | Shock range | Output |
-|---|---|---|
-| Lithium cost | −10% to +10%, 2% steps | Cost of lithium, cost of sales, gross margin — `analysis/lithium-cost-sensitivity.csv` |
-| FX translation | ΔUSD/CNY −8% to +8%, 1% steps × USD share of overseas revenue 30%–70% | Overseas gross profit, $bn — `analysis/fx-overseas-gross-profit-sensitivity.csv` |
+![EUR/CNY vs euro area–China 10-year yield differential](figures/fig-eurcny-vs-yield-differential.png)
 
-The FX grid uses `Overseas Gross Profit₁ = Overseas Gross Profit₀ × (1 + w × ΔUSD/CNY)`, base $8.60bn. An 8% USD/CNY move shifts overseas gross profit by $0.21bn at w=30% and $0.48bn at w=70% — FX risk lands on translated overseas profit, not on company-wide margins.
+### 4. FX sensitivity: overseas gross profit under a two-factor grid
+
+The currency composition of overseas revenue is not disclosed, so exposure is modelled with a deliberately simple two-factor framework — an assumed USD share of overseas revenue (*w*) against a USD/CNY shock:
+
+```
+Overseas Gross Profit₁ = Overseas Gross Profit₀ × (1 + w × ΔUSD/CNY)
+```
+
+**Sensitivity of overseas gross profit ($bn)** — base case $8.60bn
+
+| ΔUSD/CNY | w = 30% | w = 40% | w = 50% | w = 60% | w = 70% |
+|---|---|---|---|---|---|
+| **−8%** | 8.40 | 8.33 | 8.26 | 8.19 | 8.12 |
+| **−7%** | 8.42 | 8.36 | 8.30 | 8.24 | 8.18 |
+| **−6%** | 8.45 | 8.40 | 8.35 | 8.29 | 8.24 |
+| **−5%** | 8.47 | 8.43 | 8.39 | 8.35 | 8.30 |
+| **−4%** | 8.50 | 8.47 | 8.43 | 8.40 | 8.36 |
+| **−3%** | 8.53 | 8.50 | 8.47 | 8.45 | 8.42 |
+| **−2%** | 8.55 | 8.53 | 8.52 | 8.50 | 8.48 |
+| **−1%** | 8.58 | 8.57 | 8.56 | 8.55 | 8.54 |
+| **0%** | 8.60 | 8.60 | 8.60 | 8.60 | 8.60 |
+| **+1%** | 8.63 | 8.64 | 8.65 | 8.65 | 8.66 |
+| **+2%** | 8.65 | 8.67 | 8.69 | 8.71 | 8.72 |
+| **+3%** | 8.68 | 8.71 | 8.73 | 8.76 | 8.78 |
+| **+4%** | 8.71 | 8.74 | 8.78 | 8.81 | 8.84 |
+| **+5%** | 8.73 | 8.78 | 8.82 | 8.86 | 8.90 |
+| **+6%** | 8.76 | 8.81 | 8.86 | 8.91 | 8.96 |
+| **+7%** | 8.78 | 8.84 | 8.90 | 8.96 | 9.02 |
+| **+8%** | 8.81 | 8.88 | 8.95 | 9.02 | 9.08 |
+
+Overseas profitability rises with USD/CNY, and the size of the effect grows with the assumed USD share: an 8% move shifts overseas gross profit by $0.21bn at *w* = 30% but $0.48bn at *w* = 70%. FX risk therefore reaches BYD mainly through the translation of overseas profit, not through large company-wide margin swings.
+
+Machine-readable grid: [`analysis/fx-overseas-gross-profit-sensitivity.csv`](analysis/fx-overseas-gross-profit-sensitivity.csv)
 
 ## Repository contents
 
 ```
 report/     full report (PDF, as submitted) + condensed write-up in English and Chinese
 data/       key metrics, quarterly lithium prices and gross margin, FX rates, overseas revenue mix
-analysis/   sensitivity grids: lithium cost, FX translation
+analysis/   sensitivity grids: lithium cost (±10%), FX translation (ΔUSD/CNY × USD share)
 figures/    charts: price competition, lithium vs gross margin, lithium sensitivity, USD/CNY and EUR/CNY vs yield differentials
 ```
 
