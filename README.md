@@ -6,6 +6,8 @@ Market risk workstream of a group project on **enterprise risk management for BY
 
 This repository contains **only the market risk section, which I authored**. The wider group report (governance framework, operational risk, country risk) is not included.
 
+📄 **[Read the full report (PDF)](https://github.com/siiucd1-cyber/byd-market-risk-analysis/blob/main/report/market-risk-analysis.pdf)** — the submitted coursework document, with the original charts and tables. A condensed write-up is in [`report/market-risk-analysis.md`](report/market-risk-analysis.md).
+
 ## Question
 
 BYD is growing quickly in scale and in overseas exposure, but into a more crowded and more volatile environment. Which external channels actually transmit into earnings, and by how much?
@@ -51,7 +53,7 @@ USD/CNY and EUR/CNY are shown to track the 10-year sovereign yield differential 
 ## Repository contents
 
 ```
-report/     market risk section, my authored text (English and Chinese)
+report/     full report (PDF, as submitted) + condensed write-up in English and Chinese
 data/       key metrics, quarterly lithium prices and gross margin, FX rates, overseas revenue mix
 analysis/   lithium cost sensitivity table
 figures/    charts: price competition, lithium vs gross margin, lithium sensitivity, USD/CNY and EUR/CNY vs yield differentials

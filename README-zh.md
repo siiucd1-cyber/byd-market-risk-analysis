@@ -6,6 +6,8 @@
 
 本仓库**只包含由我撰写的市场风险章节**。小组报告的其余部分（治理框架、运营风险、国别风险）未收录。
 
+📄 **[阅读完整报告（PDF）](https://github.com/siiucd1-cyber/byd-market-risk-analysis/blob/main/report/market-risk-analysis.pdf)** —— 提交版课程作业原件，含原始图表。精简版文字见 [`report/market-risk-analysis-zh.md`](report/market-risk-analysis-zh.md)。
+
 ## 要回答的问题
 
 比亚迪的规模与海外敞口同时快速扩张，但外部环境更拥挤也更波动。哪些外部变量真正会传导到利润？传导幅度有多大？
@@ -51,7 +53,7 @@
 ## 仓库结构
 
 ```
-report/     市场风险章节（本人撰写，含中英文两版）
+report/     完整报告 PDF（提交版原件）+ 中英文精简版文字
 data/       关键指标、碳酸锂季度价格与毛利率、汇率、海外收入结构
 analysis/   锂价成本敏感性测算表
 figures/    图表：价格竞争、锂价与毛利率、锂价敏感性、USD/CNY 与 EUR/CNY 对利差
