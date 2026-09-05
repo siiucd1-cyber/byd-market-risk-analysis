@@ -1,5 +1,7 @@
 # BYD Market Risk Analysis
 
+**English** · [中文](README-zh.md)
+
 Market risk workstream of a group project on **enterprise risk management for BYD (1211.HK)**, completed for the Financial Risk Management module, MSc Accounting and Financial Management, UCD Smurfit Business School (2026).
 
 This repository contains **only the market risk section, which I authored**. The wider group report (governance framework, operational risk, country risk) is not included.
@@ -49,7 +51,7 @@ USD/CNY and EUR/CNY are shown to track the 10-year sovereign yield differential 
 ## Repository contents
 
 ```
-report/     market risk section (my authored text)
+report/     market risk section, my authored text (English and Chinese)
 data/       key metrics, quarterly lithium prices and gross margin, FX rates, overseas revenue mix
 analysis/   lithium cost sensitivity table
 figures/    charts: price competition, lithium vs gross margin, lithium sensitivity, USD/CNY and EUR/CNY vs yield differentials

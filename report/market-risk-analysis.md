@@ -1,6 +1,8 @@
 # Market Risk — BYD (1211.HK)
 
 > Market risk workstream of a group enterprise-risk-management project on BYD, Financial Risk Management module, MSc Accounting and Financial Management, UCD Smurfit (2026). **This file contains only the section I authored.**
+>
+> [中文版](market-risk-analysis-zh.md)
 
 ## Scope
 
