@@ -57,6 +57,28 @@ BYD discloses overseas revenue without a regional breakdown. This analysis there
 
 Since 2020, USD/CNY and EUR/CNY have broadly tracked the 10-year sovereign yield differentials of the US and euro area against China. The relationship is not one-for-one over short periods, but the long-run co-movement supports using rate differentials as a reference for exchange-rate expectations.
 
+### Two-factor FX sensitivity
+
+Because the currency composition of overseas revenue is not disclosed, exposure is modelled with a deliberately simple two-factor framework: an assumed USD share of overseas revenue (*w*) and a USD/CNY shock.
+
+```
+Overseas Gross Profit₁ = Overseas Gross Profit₀ × (1 + w × ΔUSD/CNY)
+```
+
+Base overseas gross profit is $8.60bn. The grid runs ΔUSD/CNY from −8% to +8% in 1% steps against *w* = 30%–70%:
+
+| ΔUSD/CNY | w=30% | w=40% | w=50% | w=60% | w=70% |
+|---|---|---|---|---|---|
+| −8% | 8.40 | 8.33 | 8.26 | 8.19 | 8.12 |
+| −4% | 8.50 | 8.47 | 8.43 | 8.40 | 8.36 |
+| 0% | 8.60 | 8.60 | 8.60 | 8.60 | 8.60 |
+| +4% | 8.71 | 8.74 | 8.78 | 8.81 | 8.84 |
+| +8% | 8.81 | 8.88 | 8.95 | 9.02 | 9.08 |
+
+Overseas profitability rises with USD/CNY, and the size of the effect grows with the assumed USD share. The implication is that FX risk reaches BYD mainly through translation of overseas profit, rather than through large company-wide margin swings.
+
+Full grid (1% steps): `analysis/fx-overseas-gross-profit-sensitivity.csv`
+
 Data: `data/overseas-revenue-mix.csv` · `data/fx-rates-quarterly.csv`
 Charts: `figures/fig-usdcny-vs-yield-differential.png` · `figures/fig-eurcny-vs-yield-differential.png`
 

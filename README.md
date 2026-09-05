@@ -50,12 +50,21 @@ Overseas revenue share moved from 21.6% (2022) to 38.7% (2025), while domestic r
 
 USD/CNY and EUR/CNY are shown to track the 10-year sovereign yield differential against China over 2020–2025, which is used as the reference for exchange-rate expectations.
 
+### 4. Two sensitivity grids quantify the downside
+
+| Grid | Shock range | Output |
+|---|---|---|
+| Lithium cost | −10% to +10%, 2% steps | Cost of lithium, cost of sales, gross margin — `analysis/lithium-cost-sensitivity.csv` |
+| FX translation | ΔUSD/CNY −8% to +8%, 1% steps × USD share of overseas revenue 30%–70% | Overseas gross profit, $bn — `analysis/fx-overseas-gross-profit-sensitivity.csv` |
+
+The FX grid uses `Overseas Gross Profit₁ = Overseas Gross Profit₀ × (1 + w × ΔUSD/CNY)`, base $8.60bn. An 8% USD/CNY move shifts overseas gross profit by $0.21bn at w=30% and $0.48bn at w=70% — FX risk lands on translated overseas profit, not on company-wide margins.
+
 ## Repository contents
 
 ```
 report/     full report (PDF, as submitted) + condensed write-up in English and Chinese
 data/       key metrics, quarterly lithium prices and gross margin, FX rates, overseas revenue mix
-analysis/   lithium cost sensitivity table
+analysis/   sensitivity grids: lithium cost, FX translation
 figures/    charts: price competition, lithium vs gross margin, lithium sensitivity, USD/CNY and EUR/CNY vs yield differentials
 ```
 
