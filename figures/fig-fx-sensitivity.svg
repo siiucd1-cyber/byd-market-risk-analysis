@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 340" font-family="Helvetica,Arial,sans-serif" font-size="12" fill="#333">
+<rect width="640" height="340" fill="#fff"/>
+<text x="320.0" y="26" text-anchor="middle" font-size="15">FX impact depends on the natural-hedge ratio h (w = 50%)</text>
+<line x1="70" y1="290" x2="570" y2="290" stroke="#9AA5B1"/>
+<line x1="70" y1="50" x2="70" y2="290" stroke="#9AA5B1"/>
+<text x="62" y="294.0" text-anchor="end" fill="#333">-1.6</text>
+<text x="62" y="264.0" text-anchor="end" fill="#333">-1.2</text>
+<text x="62" y="234.0" text-anchor="end" fill="#333">-0.8</text>
+<text x="62" y="204.0" text-anchor="end" fill="#333">-0.4</text>
+<text x="62" y="174.0" text-anchor="end" fill="#333">0.0</text>
+<text x="62" y="144.0" text-anchor="end" fill="#333">+0.4</text>
+<text x="62" y="114.0" text-anchor="end" fill="#333">+0.8</text>
+<text x="62" y="84.0" text-anchor="end" fill="#333">+1.2</text>
+<text x="62" y="54.0" text-anchor="end" fill="#333">+1.6</text>
+<text transform="translate(18,170.0) rotate(-90)" text-anchor="middle" fill="#333">Change in group gross margin (pp)</text>
+<text x="84.7" y="308" text-anchor="middle">-8%</text>
+<text x="143.5" y="308" text-anchor="middle">-6%</text>
+<text x="202.4" y="308" text-anchor="middle">-4%</text>
+<text x="261.2" y="308" text-anchor="middle">-2%</text>
+<text x="320.0" y="308" text-anchor="middle">0%</text>
+<text x="378.8" y="308" text-anchor="middle">+2%</text>
+<text x="437.6" y="308" text-anchor="middle">+4%</text>
+<text x="496.5" y="308" text-anchor="middle">+6%</text>
+<text x="555.3" y="308" text-anchor="middle">+8%</text>
+<text x="320.0" y="332" text-anchor="middle">USD/CNY change (RMB depreciation +)</text>
+<line x1="70" y1="170.0" x2="570" y2="170.0" stroke="#9AA5B1"/>
+<line x1="320.0" y1="50" x2="320.0" y2="290" stroke="#9AA5B1"/>
+<polyline points="84.7,285.9 143.5,257.0 202.4,228.0 261.2,199.0 320.0,170.0 378.8,141.0 437.6,112.0 496.5,83.0 555.3,54.1" fill="none" stroke="#3B6EA5" stroke-width="2.2"/>
+<circle cx="84.7" cy="285.9" r="3" fill="#3B6EA5"/>
+<circle cx="143.5" cy="257.0" r="3" fill="#3B6EA5"/>
+<circle cx="202.4" cy="228.0" r="3" fill="#3B6EA5"/>
+<circle cx="261.2" cy="199.0" r="3" fill="#3B6EA5"/>
+<circle cx="320.0" cy="170.0" r="3" fill="#3B6EA5"/>
+<circle cx="378.8" cy="141.0" r="3" fill="#3B6EA5"/>
+<circle cx="437.6" cy="112.0" r="3" fill="#3B6EA5"/>
+<circle cx="496.5" cy="83.0" r="3" fill="#3B6EA5"/>
+<circle cx="555.3" cy="54.1" r="3" fill="#3B6EA5"/>
+<polyline points="84.7,257.0 143.5,235.2 202.4,213.5 261.2,191.8 320.0,170.0 378.8,148.2 437.6,126.5 496.5,104.8 555.3,83.0" fill="none" stroke="#6F95C2" stroke-width="2.2"/>
+<circle cx="84.7" cy="257.0" r="3" fill="#6F95C2"/>
+<circle cx="143.5" cy="235.2" r="3" fill="#6F95C2"/>
+<circle cx="202.4" cy="213.5" r="3" fill="#6F95C2"/>
+<circle cx="261.2" cy="191.8" r="3" fill="#6F95C2"/>
+<circle cx="320.0" cy="170.0" r="3" fill="#6F95C2"/>
+<circle cx="378.8" cy="148.2" r="3" fill="#6F95C2"/>
+<circle cx="437.6" cy="126.5" r="3" fill="#6F95C2"/>
+<circle cx="496.5" cy="104.8" r="3" fill="#6F95C2"/>
+<circle cx="555.3" cy="83.0" r="3" fill="#6F95C2"/>
+<polyline points="84.7,228.0 143.5,213.5 202.4,199.0 261.2,184.5 320.0,170.0 378.8,155.5 437.6,141.0 496.5,126.5 555.3,112.0" fill="none" stroke="#A9C0DB" stroke-width="2.2"/>
+<circle cx="84.7" cy="228.0" r="3" fill="#A9C0DB"/>
+<circle cx="143.5" cy="213.5" r="3" fill="#A9C0DB"/>
+<circle cx="202.4" cy="199.0" r="3" fill="#A9C0DB"/>
+<circle cx="261.2" cy="184.5" r="3" fill="#A9C0DB"/>
+<circle cx="320.0" cy="170.0" r="3" fill="#A9C0DB"/>
+<circle cx="378.8" cy="155.5" r="3" fill="#A9C0DB"/>
+<circle cx="437.6" cy="141.0" r="3" fill="#A9C0DB"/>
+<circle cx="496.5" cy="126.5" r="3" fill="#A9C0DB"/>
+<circle cx="555.3" cy="112.0" r="3" fill="#A9C0DB"/>
+<polyline points="84.7,192.6 143.5,186.9 202.4,181.2 261.2,175.6 320.0,170.0 378.8,164.4 437.6,158.8 496.5,153.1 555.3,147.4" fill="none" stroke="#E08A3C" stroke-width="2.2"/>
+<circle cx="84.7" cy="192.6" r="3" fill="#E08A3C"/>
+<circle cx="143.5" cy="186.9" r="3" fill="#E08A3C"/>
+<circle cx="202.4" cy="181.2" r="3" fill="#E08A3C"/>
+<circle cx="261.2" cy="175.6" r="3" fill="#E08A3C"/>
+<circle cx="320.0" cy="170.0" r="3" fill="#E08A3C"/>
+<circle cx="378.8" cy="164.4" r="3" fill="#E08A3C"/>
+<circle cx="437.6" cy="158.8" r="3" fill="#E08A3C"/>
+<circle cx="496.5" cy="153.1" r="3" fill="#E08A3C"/>
+<circle cx="555.3" cy="147.4" r="3" fill="#E08A3C"/>
+<line x1="84" y1="58" x2="108" y2="58" stroke="#3B6EA5" stroke-width="2.5"/><text x="114" y="62" font-size="11">h = 0%</text>
+<line x1="84" y1="76" x2="108" y2="76" stroke="#6F95C2" stroke-width="2.5"/><text x="114" y="80" font-size="11">h = 25%</text>
+<line x1="84" y1="94" x2="108" y2="94" stroke="#A9C0DB" stroke-width="2.5"/><text x="114" y="98" font-size="11">h = 50%</text>
+<line x1="84" y1="112" x2="108" y2="112" stroke="#E08A3C" stroke-width="2.5"/><text x="114" y="116" font-size="11">h = 80.5% (submitted assumption)</text>
+</svg>
