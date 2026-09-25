@@ -1,6 +1,6 @@
-year,overseas_revenue_ratio_pct,overseas_revenue_growth_pct,domestic_revenue_growth_pct
-2021,29.57,10.61,59.85
-2022,21.57,31.0,100.01
-2023,26.6,72.28,30.7
-2024,28.55,36.45,23.74
-2025,38.65,43.23,-9.15
+year,overseas_revenue_ratio_pct,overseas_revenue_rmb_bn,overseas_revenue_growth_rmb_pct,domestic_revenue_growth_rmb_pct
+2021,29.57,63.91,,
+2022,21.57,91.45,43.1,118.48
+2023,26.6,160.22,75.2,32.92
+2024,28.55,221.88,38.49,25.59
+2025,38.65,310.74,40.05,-11.17

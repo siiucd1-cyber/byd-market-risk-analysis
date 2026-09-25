@@ -1,4 +1,4 @@
-year,revenue_growth,vehicle_sales_million,vehicle_sales_growth,avg_revenue_per_vehicle_rmb10k,gross_margin,net_margin
-2023,0.3967,3.02,0.6237,22.6021,0.2021,0.0499
-2024,0.2712,4.27,0.4139,20.1138,0.1944,0.0518
-2025,0.0581,4.6,0.0773,20.0617,0.1774,0.0406
+year,vehicle_sales_million,vehicle_sales_growth,revenue_rmb_bn,revenue_growth_rmb,domestic_revenue_growth_rmb,overseas_revenue_growth_rmb,overseas_revenue_share,auto_revenue_per_vehicle_rmb10k,auto_revenue_per_vehicle_change,gross_margin,auto_segment_gross_margin,net_margin
+2023,3.02,0.6237,602.3154,0.4204,0.3292,0.752,0.266,16.0084,-0.083,0.2021,0.2302,0.0499
+2024,4.27,0.4139,777.1025,0.2902,0.2559,0.3849,0.2855,14.4586,-0.0968,0.1944,0.2231,0.0518
+2025,4.6,0.0773,803.965,0.0346,-0.1117,0.4005,0.3865,14.101,-0.0247,0.1774,0.2049,0.0406
