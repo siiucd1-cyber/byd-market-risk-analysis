@@ -6,110 +6,139 @@ Market risk workstream of a group project on **enterprise risk management for BY
 
 This repository contains **only the market risk section, which I authored**. The wider group report (governance framework, operational risk, country risk) is not included.
 
-📄 **[Read the full report (PDF)](https://github.com/siiucd1-cyber/byd-market-risk-analysis/blob/main/report/market-risk-analysis.pdf)** — the submitted coursework document, with the original charts and tables. A condensed write-up is in [`report/market-risk-analysis.md`](report/market-risk-analysis.md).
+> **Revised version.** After submission I re-audited the working spreadsheet cell by cell against the Wind source files and corrected five errors (see [Corrections to the submitted version](#corrections-to-the-submitted-version)). All figures on this page and in `data/` and `analysis/` are the corrected results. [`report/market-risk-analysis.pdf`](report/market-risk-analysis.pdf) is kept unchanged as the original submission.
 
 ## Question
 
-BYD is growing quickly in scale and in overseas exposure, but into a more crowded and more volatile environment. Which external channels actually transmit into earnings, and by how much?
+BYD is growing quickly in scale and in overseas exposure, but into a more crowded and more volatile environment. Which external channels actually transmit into earnings, by how much, and which one deserves the most attention?
 
-Three channels are examined: **price competition**, **raw material prices**, and **foreign exchange**.
+Three channels are examined: **price competition**, **raw material prices**, and **foreign exchange**. All figures are in RMB; the base year is 2025.
 
 ## Findings
 
-### 1. Price competition is already visible in the numbers
+### 1. Price competition: unit revenue has fallen three years running, and growth now comes from abroad
 
 | | 2023 | 2024 | 2025 |
 |---|---|---|---|
 | Vehicle sales (m units) | 3.02 | 4.27 | 4.60 |
 | Vehicle sales growth | 62.4% | 41.4% | 7.7% |
-| Revenue growth | 39.7% | 27.1% | 5.8% |
-| Avg. revenue per vehicle (RMB '0000) | 22.60 | 20.11 | 20.06 |
+| Revenue growth | 42.0% | 29.0% | 3.5% |
+| Auto revenue per vehicle (RMB '0000) | 16.01 | 14.46 | 14.10 |
+| Change in revenue per vehicle | −8.3% | −9.7% | −2.5% |
 | Gross margin | 20.21% | 19.44% | 17.74% |
+| Domestic revenue growth | 32.9% | 25.6% | **−11.2%** |
+| Overseas revenue growth | 75.2% | 38.5% | 40.1% |
 
-Volumes still rise, but growth decelerates sharply while average revenue per vehicle and gross margin fall together — the signature of price-led competition rather than demand weakness.
+Volume–price bridge of auto segment revenue (RMB bn):
 
-![Vehicle sales, revenue growth and margin, 2023–2025](figures/fig-price-competition.png)
+| | Revenue change | Volume effect | Price effect (incl. mix) |
+|---|---|---|---|
+| 2024 | +133.9 | +200.1 | −66.2 |
+| 2025 | +31.3 | +47.7 | −16.5 |
 
-### 2. Lithium transmits to cost of sales through a three-stage chain
+- Revenue per vehicle has declined every year, and the price effect keeps offsetting part of the volume gain. Pricing power is weakening.
+- In 2025 domestic revenue fell 11.2% and all growth came from overseas (+40.1%). The domestic picture is **pressure on both volume and price**, so it cannot be attributed to price competition alone.
+- Without model-level data, the price effect includes mix changes (e.g. a higher share of cheaper models) and cannot be split further.
 
-Rather than assuming a 1:1 pass-through from lithium price to cost, the analysis uses a staged mechanism with sourced coefficients:
+![Unit revenue and gross margin, 2023–2025](figures/fig-price-competition.svg)
+
+Data: [`data/byd-key-metrics-2023-2025.csv`](data/byd-key-metrics-2023-2025.csv) · [`analysis/auto-revenue-volume-price-bridge.csv`](analysis/auto-revenue-volume-price-bridge.csv)
+
+### 2. Lithium: a ±10% shock moves gross margin by about 0.35 pp
+
+A staged transmission is used rather than a 1:1 link between lithium and cost of sales:
 
 ```
-ΔCoS = CoS₀ × 35% × 15.4% × ΔLC
+Lithium-related cost = CoS × auto share of CoS × battery pack share × lithium share of battery
+                     = RMB 661.3bn × 77.99% × 35% × 15.4% ≈ RMB 27.8bn (4.2% of CoS)
+CoS₁ = CoS₀ + lithium-related cost × Δlithium price × (1 − pass-through)
 ```
 
 | Stage | Coefficient | Source |
 |---|---|---|
-| Lithium carbonate → battery cost | 15.4% | CITIC Securities estimate |
-| Battery pack → vehicle value | 35% | IEA benchmark |
-| Vehicle cost → BYD cost of sales | 55.85% | BYD 2025 annual report |
+| Lithium carbonate → battery cost | 15.4% | CITIC Securities estimate (external) |
+| Battery pack → vehicle | 35% | IEA benchmark (value basis, external) |
+| Auto cost → BYD cost of sales | 77.99% | BYD 2025 segment data |
 
-A ±10% lithium price shock is then run through to cost of sales and gross margin ([`analysis/lithium-cost-sensitivity.csv`](analysis/lithium-cost-sensitivity.csv)).
+| Lithium shock | −30% | −10% | 0 | +10% | +30% |
+|---|---|---|---|---|---|
+| Gross margin | 18.78% | 18.09% | 17.74% | 17.40% | 16.71% |
+| Change (pp) | +1.04 | +0.35 | — | −0.35 | −1.04 |
+
+Each 10% move in lithium is worth about RMB 2.8bn pre-tax, or 8.5% of 2025 net profit, assuming no pass-through.
+
+**Limitation:** a rough bottom-up check (4.6m vehicles × ~40 kWh × ~0.6 kg LCE/kWh × 2025 average price) gives only about RMB 8.2bn of lithium cost, roughly one third of the top-down figure. The 15.4% coefficient may date from a higher-price period, so the table above is closer to an **upper bound**.
+
+![Lithium shock vs gross margin](figures/fig-lithium-sensitivity.svg)
 
 ![Quarterly lithium carbonate price vs BYD gross margin](figures/fig-lithium-vs-gross-margin.png)
 
-![Lithium cost sensitivity, ±10%](figures/fig-lithium-sensitivity.png)
+Data: [`analysis/lithium-cost-sensitivity.csv`](analysis/lithium-cost-sensitivity.csv)
 
 ### 3. FX exposure is rising structurally
 
-Overseas revenue share moved from 21.6% (2022) to 38.7% (2025), while domestic revenue growth turned negative (−9.2%) in 2025. Because BYD discloses overseas revenue without a regional breakdown, USD/CNY is used as a proxy for aggregate non-RMB exposure rather than assigning exposure to any single currency.
+Overseas revenue share rose from 21.6% (2022) to 38.7% (2025, RMB 310.7bn). BYD does not split overseas revenue by currency, so USD/CNY is used as the benchmark for aggregate non-RMB exposure.
 
-USD/CNY and EUR/CNY are shown to track the 10-year sovereign yield differential against China over 2020–2025, which is used as the reference for exchange-rate expectations.
+Since 2020, USD/CNY and EUR/CNY have broadly tracked the 10-year sovereign yield differential of the US and the euro area against China, which serves as a reference for exchange-rate expectations.
 
 ![USD/CNY vs US–China 10-year yield differential](figures/fig-usdcny-vs-yield-differential.png)
 
 ![EUR/CNY vs euro area–China 10-year yield differential](figures/fig-eurcny-vs-yield-differential.png)
 
-### 4. FX sensitivity: overseas gross profit under a two-factor grid
-
-The currency composition of overseas revenue is not disclosed, so exposure is modelled with a deliberately simple two-factor framework — an assumed USD share of overseas revenue (*w*) against a USD/CNY shock:
+### 4. FX sensitivity depends on the natural-hedge ratio, and is probably larger than lithium
 
 ```
-Overseas Gross Profit₁ = Overseas Gross Profit₀ × (1 + w × ΔUSD/CNY)
+ΔGross profit = overseas revenue × w × ΔUSD/CNY × (1 − h)
 ```
 
-**Sensitivity of overseas gross profit ($bn)** — base case $8.60bn
+- *w*: USD (and USD-linked) share of overseas revenue; scenario value 50%
+- *h*: foreign-currency cost as a share of foreign-currency revenue, i.e. the degree of natural hedging. h = 0 means exported vehicles are produced entirely at RMB cost; h = 80.5% (overseas cost / overseas revenue) reproduces the formula in the submitted version
 
-| ΔUSD/CNY | w = 30% | w = 40% | w = 50% | w = 60% | w = 70% |
-|---|---|---|---|---|---|
-| **−8%** | 8.40 | 8.33 | 8.26 | 8.19 | 8.12 |
-| **−7%** | 8.42 | 8.36 | 8.30 | 8.24 | 8.18 |
-| **−6%** | 8.45 | 8.40 | 8.35 | 8.29 | 8.24 |
-| **−5%** | 8.47 | 8.43 | 8.39 | 8.35 | 8.30 |
-| **−4%** | 8.50 | 8.47 | 8.43 | 8.40 | 8.36 |
-| **−3%** | 8.53 | 8.50 | 8.47 | 8.45 | 8.42 |
-| **−2%** | 8.55 | 8.53 | 8.52 | 8.50 | 8.48 |
-| **−1%** | 8.58 | 8.57 | 8.56 | 8.55 | 8.54 |
-| **0%** | 8.60 | 8.60 | 8.60 | 8.60 | 8.60 |
-| **+1%** | 8.63 | 8.64 | 8.65 | 8.65 | 8.66 |
-| **+2%** | 8.65 | 8.67 | 8.69 | 8.71 | 8.72 |
-| **+3%** | 8.68 | 8.71 | 8.73 | 8.76 | 8.78 |
-| **+4%** | 8.71 | 8.74 | 8.78 | 8.81 | 8.84 |
-| **+5%** | 8.73 | 8.78 | 8.82 | 8.86 | 8.90 |
-| **+6%** | 8.76 | 8.81 | 8.86 | 8.91 | 8.96 |
-| **+7%** | 8.78 | 8.84 | 8.90 | 8.96 | 9.02 |
-| **+8%** | 8.81 | 8.88 | 8.95 | 9.02 | 9.08 |
+**Impact on group gross margin (pp, w = 50%)**
 
-Overseas profitability rises with USD/CNY, and the size of the effect grows with the assumed USD share: an 8% move shifts overseas gross profit by $0.21bn at *w* = 30% but $0.48bn at *w* = 70%. FX risk therefore reaches BYD mainly through the translation of overseas profit, not through large company-wide margin swings.
+| ΔUSD/CNY | h = 0% | h = 25% | h = 50% | h = 80.5% (submitted assumption) |
+|---|---|---|---|---|
+| −8% | −1.55 | −1.16 | −0.77 | −0.30 |
+| −4% | −0.77 | −0.58 | −0.39 | −0.15 |
+| +4% | +0.77 | +0.58 | +0.39 | +0.15 |
+| +8% | +1.55 | +1.16 | +0.77 | +0.30 |
 
-Machine-readable grid: [`analysis/fx-overseas-gross-profit-sensitivity.csv`](analysis/fx-overseas-gross-profit-sensitivity.csv)
+At h = 0, an 8% RMB appreciation cuts gross profit by about RMB 12.4bn, equivalent to 38% of net profit. Even at h = 50%, the impact (−0.77 pp) exceeds that of a ±10% lithium move (0.35 pp).
 
-## Repository contents
+**Conclusion:** the submitted version found that FX mainly affects the translation of overseas profit rather than group-wide margin. That result came from the formula's implicit 80.5% natural hedge. Once the assumption is relaxed, **FX is likely a larger market risk than lithium at 2025 levels**. The key unknown is h, so the board should require disclosure or tracking of the foreign-currency cost share and the hedge ratio as a first-order monitoring metric.
+
+![FX shock vs gross margin](figures/fig-fx-sensitivity.svg)
+
+Data: [`analysis/fx-overseas-gross-profit-sensitivity.csv`](analysis/fx-overseas-gross-profit-sensitivity.csv)
+
+## Corrections to the submitted version
+
+| # | Submitted version | Problem | Correction |
+|---|---|---|---|
+| 1 | Auto cost = 55.85% of cost of sales | The spreadsheet divided **2023** auto cost by 2025 cost of sales | Correct 2025 value: 77.99% |
+| 2 | ±10% lithium → ±10% cost of sales | The formula scaled lithium cost back up to total cost of sales, producing 1:1 transmission and contradicting the stated method | CoS₁ = CoS₀ + Δlithium cost |
+| 3 | Base "gross margin" 52.4% | Computed as (revenue − cost) / cost, i.e. a mark-up | (revenue − cost) / revenue = 17.74% |
+| 4 | FX shock applied to overseas gross profit | Implicitly assumes overseas cost and revenue share a currency (h = 80.5%), understating exposure | Net exposure on foreign-currency revenue, with h as a parameter |
+| 5 | Growth rates and unit revenue in USD | Wind GSD converts at each year-end rate, so growth rates mix in FX moves; unit revenue was actually in USD '000 | All figures restated in RMB, matching the annual reports |
+
+After correction, 2025 revenue per vehicle still fell 2.5% (it looked flat in USD), which gives the price-pressure finding firmer support.
+
+## Repository structure
 
 ```
-report/     full report (PDF, as submitted) + condensed write-up in English and Chinese
-data/       key metrics, quarterly lithium prices and gross margin, FX rates, overseas revenue mix
-analysis/   sensitivity grids: lithium cost (±10%), FX translation (ΔUSD/CNY × USD share)
-figures/    charts: price competition, lithium vs gross margin, lithium sensitivity, USD/CNY and EUR/CNY vs yield differentials
+report/     Submitted report PDF (original) + revised condensed write-ups (EN/ZH)
+data/       Key metrics (RMB), quarterly lithium price and margin, FX rates, overseas revenue mix
+analysis/   Volume–price bridge, lithium sensitivity, FX sensitivity (ΔUSD/CNY × natural-hedge ratio)
+figures/    Charts
 ```
 
 ## Data note
 
-All figures published here are either compiled by me or derived from BYD's publicly filed annual reports and public commodity/FX series. Raw exports from licensed market-data terminals are deliberately **not** included in this repository.
+Financial data are from Wind (GSD income statement and segment breakdown), converted back to RMB at the same year-end rates Wind used, which reproduces the reported RMB figures (e.g. 2024 revenue RMB 777.1bn). **Raw exports from paid terminals are not included in this repository.**
 
-## Method and tools
+## Methods and tools
 
-Excel for data assembly and sensitivity modelling; staged transmission modelling for the cost channel; descriptive and comparative analysis for the FX channel. Coefficients are sourced rather than assumed, and each conclusion is traceable to the underlying series in `data/`.
+Excel for data preparation and sensitivity modelling (all intermediate values are formulas and traceable); Python for CSV outputs and charts.
 
 ---
 
